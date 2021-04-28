@@ -12,7 +12,8 @@
   "keywords": [
     "dependency",
     "overview",
-    "tool"
+    "tool",
+    "cli"
   ],
   "author": "Leif Arriens",
   "bin": {
@@ -24,5 +25,8 @@
     "cli-table": "^0.3.6",
     "commander": "^7.2.0",
     "ora": "^5.4.0"
+  },
+  "devDependencies": {
+    "np": "^7.5.0"
   }
 }

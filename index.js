@@ -127,7 +127,7 @@ function printTable(data, config) {
 
     if (config.docs)
       row.push(
-        `\ ${links.homepage} \n ${chalk.italic(
+        `\ ${links.homepage || links.npm} \n ${chalk.italic(
           chalk.gray(formatedDescription)
         )}`
       );

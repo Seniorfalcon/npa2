@@ -40,4 +40,4 @@ Get devDependencies overview.
 
 ## License
 
-MIT
+[MIT](https://github.com/leifarriens/npa2/blob/main/LICENCE)

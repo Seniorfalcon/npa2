@@ -1,6 +1,6 @@
 # npa2
 
-![npa2 screenshot](https://github.com/leifarriens/npa2/blob/master/screen.png?raw=true)
+![npa2 screenshot](https://github.com/leifarriens/npa2/blob/master/screen.png)
 
 Dependency overview tool for javascript projects.
 

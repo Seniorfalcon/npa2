@@ -1,6 +1,6 @@
 {
   "name": "npa2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dependency overview tool for javascript projects",
   "license": "MIT",
   "main": "index.js",

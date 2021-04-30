@@ -122,8 +122,7 @@ function printTable(data, config) {
 
     const row = [coloredName(), installedVersion];
 
-    const formatedDescription =
-      description.split(' ').slice(0, 8).join(' ') + '...';
+    const formatedDescription = truncateDescription(description, 8);
 
     if (config.docs)
       row.push(
@@ -163,4 +162,14 @@ function readPackageJson() {
     console.error(err);
     process.exit(1);
   }
+}
+
+function truncateDescription(str, num) {
+  const array = str.split(' ');
+
+  if (array.length <= num) {
+    return array.join(' ');
+  }
+
+  return array.slice(0, num).join(' ') + '...';
 }

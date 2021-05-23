@@ -1,6 +1,7 @@
 # npa2
 
 ![npa2 screenshot](https://github.com/leifarriens/npa2/raw/main/screen.png)
+<!-- ![npa2 animation](https://github.com/leifarriens/npa2/raw/main/preview.gif) -->
 
 Dependency overview tool for javascript projects.
 

@@ -4,6 +4,9 @@
   "description": "Dependency overview tool for javascript projects",
   "license": "MIT",
   "main": "index.js",
+  "scripts": {
+    "install": "yarn link npa2"
+  },
   "homepage": "https://github.com/leifarriens/npa2#readme",
   "repository": {
     "type": "git",

@@ -120,9 +120,9 @@ function printTable(data, config) {
       return name;
     };
 
-    const row = [coloredName(), installedVersion];
+    const row = [coloredName(), truncateToMaxChars(installedVersion, 10)];
 
-    const formatedDescription = truncateDescription(description, 8);
+    const formatedDescription = truncateSentenceToMaxChars(description, 50);
 
     if (config.docs)
       row.push(
@@ -164,12 +164,24 @@ function readPackageJson() {
   }
 }
 
-function truncateDescription(str, num) {
-  const array = str.split(' ');
+function truncateToMaxChars(str, length) {
+  const array = str.split('');
 
-  if (array.length <= num) {
-    return array.join(' ');
+  if (array.length <= length) {
+    return array.join('');
   }
 
-  return array.slice(0, num).join(' ') + '...';
+  return array.slice(0, length).join('') + '...';
+}
+
+function truncateSentenceToMaxChars(str, length) {
+  if (str.length > length) {
+    const trunc = str.substring(0, length);
+    const words = trunc.split(' ');
+    words.pop();
+
+    return words.join(' ') + '...';
+  }
+
+  return str;
 }

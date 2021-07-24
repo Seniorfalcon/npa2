@@ -159,7 +159,6 @@ function readPackageJson() {
     return JSON.parse(raw);
   } catch (err) {
     spinner.warn('No package.json found.');
-    console.error(err);
     process.exit(1);
   }
 }

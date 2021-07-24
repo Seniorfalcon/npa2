@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "install": "yarn link npa2"
+    "install": "yarn link npa2",
+    "publish": "np --no-tests"
   },
   "homepage": "https://github.com/leifarriens/npa2#readme",
   "repository": {

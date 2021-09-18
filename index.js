@@ -17,6 +17,7 @@ let pkgJson = null;
 program
   .version(VERSION)
   .option('-D, --dev', 'analyse devDependencies')
+  .option('-S, --scripts', 'preview package scripts')
   .action((options, command) => {
     const config = {
       dependencies: options.dev ? 'devDependencies' : 'dependencies',
@@ -36,10 +37,32 @@ program
       process.exit(1);
     }
 
+    if (options.scripts) {
+      printScipts(pkgJson['scripts']);
+      return;
+    }
+
     fetchPkgInfo(config);
   });
 
 program.parse();
+
+async function printScipts(scripts) {
+  const head = [chalk.white('Name'), chalk.white('Script')];
+  const table = new Table({ head });
+
+  const yarn = await isUsingYarn();
+  const packageManagerCmd = yarn ? 'yarn' : 'npm run';
+
+  spinner.succeed(`Done analysing ${chalk.bgWhite(chalk.black(pkgJson.name))}`);
+
+  for (let key in scripts) {
+    const row = [`${packageManagerCmd} ${key}`, scripts[key]];
+    table.push(row);
+  }
+
+  console.log(table.toString());
+}
 
 function fetchPkgInfo(config) {
   const data = Object.keys(pkgJson[config.dependencies]);
@@ -63,7 +86,7 @@ function printTable(data, config) {
 
   if (config.docs) head.push(chalk.white('Details'));
 
-  var table = new Table({ head });
+  const table = new Table({ head });
 
   const sorted = Object.values(data).sort((a, b) => {
     if (!config.sort) return 1;
@@ -183,4 +206,13 @@ function truncateSentenceToMaxChars(str, length) {
   }
 
   return str;
+}
+
+async function isUsingYarn() {
+  try {
+    await fs.promises.stat('yarn.lock');
+    return true;
+  } catch (error) {
+    return false;
+  }
 }

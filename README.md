@@ -1,7 +1,7 @@
 # npa2
 
-![npa2 screenshot](https://github.com/leifarriens/npa2/raw/main/screen.png)
-<!-- ![npa2 animation](https://github.com/leifarriens/npa2/raw/main/preview.gif) -->
+<!-- ![npa2 screenshot](https://github.com/leifarriens/npa2/raw/main/screen.png) -->
+![npa2 animation](https://github.com/leifarriens/npa2/raw/main/preview.gif)
 
 Dependency overview tool for javascript projects.
 
@@ -38,6 +38,10 @@ Display help for command.
 #### `--dev, -D`
 
 Get devDependencies overview.
+
+#### `--scripts, -S`
+
+Get all package scripts
 
 ## License
 

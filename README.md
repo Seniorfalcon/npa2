@@ -24,7 +24,7 @@ npa2
 Usage:
 
 ```sh
-npa2 [...flags]
+npa2 -flag
 ```
 
 #### `--version, --V`
@@ -41,7 +41,7 @@ Get devDependencies overview.
 
 #### `--scripts, -S`
 
-Get all package scripts
+Get all package scripts.
 
 ## License
 
